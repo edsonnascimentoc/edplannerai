@@ -1,1 +1,1 @@
-# edplannerai
+# eduplannerai
