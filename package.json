@@ -1,0 +1,32 @@
+{
+  "name": "eduplanner-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx --import ./src/instrumentation.ts ./src/server.ts",
+    "start": "node --import ./dist/instrumentation.js ./dist/src/server.js",
+    "test": "npm run build && node --test dist/tests/presentation/health.test.js"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.10.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.301.0",
+    "@opentelemetry/instrumentation-express": "^0.73.0",
+    "@opentelemetry/instrumentation-http": "^0.301.0",
+    "@opentelemetry/resources": "^3.1.0",
+    "@opentelemetry/sdk-node": "^0.301.0",
+    "@opentelemetry/semantic-conventions": "^1.45.0",
+    "express": "^5.3.0",
+    "pg": "^8.23.1",
+    "pino": "^10.4.0",
+    "redis": "^6.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.15.30",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.3"
+  }
+}
